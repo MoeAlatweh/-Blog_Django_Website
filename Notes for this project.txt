@@ -1,0 +1,98 @@
+# this app will create it from scratch(will not clone anything ready from github)
+# go to cmder and create folder called mysite or do it as normall by creating folder 
+
+# need to create vertual enviroment:
+# first tybe c:\Users\Alatweh\Anaconda3\Scripts\activate base... to activate your anaconda  
+# then create the vertual enviroment by using: conda create --name mysite python=3.7  or  conda create --name Mywebsite python=3.7    (it is easier to name the vertual enviroment same as project or app name)
+# activate your vertual envairoment by typing: conda activate mysite  or   conda activate Mywebsite
+# initelize the reposetery to put in your github account by using: git init
+# intall django frame work by typing: pip install django
+# create django-project by starting create admin for your site by typing : django-admlsin startproject mysite . >>>>make sure to not forget put (.) in the end of this line>>>>>  django-admin startproject (name of app) .
+# you will notice there is a files have been create it called>> manage.py and folder called mysite
+# create app called blog inside your project by typing: python manage.py startapp blog
+# you will notice there is a folder has been created called blog
+# need to put it in our github account
+# first type: git add .
+# then commit that by typing: git commit -m "Initial commit. Setting up the project 
+# then go to your github account and create new reposetery and name it: Blog_Django_Site  or  Blog_Django_Website
+# then copy the link of reposetery you create
+# then add your project to github by typing: git remote add origin https://github.com/MoeAlatweh/Blog_Django_Site.git   >>>if you want to remove remote url use git remote rm origin
+# then push your app to github by using: git push origin master
+# it will ask you fro username and password
+# then to make sure everything is fine go and refresh your page and it should shows you project files
+# then go and open it in Pycharm IDE to start coding
+# open the project and set your Project Interpreter by go to setting and make it to be :
+C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe 
+# go to activate your vertual envairoment 
+# first type : c:\Users\Alatweh\Anaconda3\Scripts\activate base
+# then type : conda activate mysite  or  conda activate Mywebsite
+# need to create folder to put things you need to ignore and not tracking by git tool(because you just need to track files that releate in you project)
+# create the folder by move cuersor to mysite in left hand>>rightclick>>new>>file>>name it (.gitignore)
+# go inside .gitignore file and type .idea*
+# type git status to check if you did it succisfuly and you should not see file idea
+# create new branch by typing: git checkout -b step_1_meal_prep
+# add it to github by typing : git add .
+# commit it by typing : git commit -m "Ignore pycharm project settings."
+# check how your up running by typing: python manage.py runserver
+# it should show you django page and massege of install succsisfully
+# need to remove another files to not track them
+# go to .gitignore file and type: *.pyc
+# push it to your github account by typing: git push origin step_1_meal_prep
+# you will see it added to your github account
+# add new commit by : 
+# git add .
+# git commit -m "Ignore PYC files"
+# git push origin step_1_meal_prep
+### end video #1
+
+
+## biginning of video # 2
+# create new branch by typing:  git checkout -b step_2_post_admin
+# migrate your python file to create table for information we need from username and password...etc by:  python manage.py migrate
+# create admin superusername by typing: python manage.py createsuperuser
+# it will ask you for username type: leave it blank to have it same as computer user name (alatweh) if you want something else just type it   
+# create email address:  moemenatweh@hotmail.com
+# create password: admindjango
+# it should get massage: Superuser created successfully.
+# runserver and checkout your website
+# go to chrome and type http://127.0.0.1:8000/admin to take you to admin sign page and login by information you have.
+# now need to create post from admin page
+# go to pycharm and inside blog folder open model.py to create model of post
+# post model should have : author, post title, text contain post content, created date, and published date.
+# after finish create post model go to setting and add our app
+# open setting.py under mysite folder>>find INSTALLED_APPS and add 'blog'
+# need to add post model things to database by typing: python manage.py makemigrations
+# it should show you massage of : - Create model Post
+# then to add the things to the database type:  python manage.py migrate
+# it should show you message of: (Apply all migrations: admin, auth, blog, contenttypes, sessions
+				  Running migrations:
+  				  Applying blog.0001_initial... OK)
+# and if you check this file(0001_initial...) you should see your post things (don't  change anything inside this file)
+# create string represintaion in module file
+# go to admin file and code for it 
+# to adjust time zone...go to sitting file and find time zone and change it to (America/New_York)
+# after you finish need to add it to github account, by 
+# git add .
+# git commit -m "Add ability to make posts from the administator interface."
+# when you finish from this branch and you sure about every thing you merge it with master to be (up to date) by using:
+# first you want to go to master by : git checkout master
+# check the status by : git status
+# to ignore some changes you don't to add type: git stash
+# then mergr step 2 in master by using: git merge step_2_post_admin
+# it should show you punsh of lines start by : Fast-forward
+# need to push it to github by: git push origin master
+
+
+## biginning of video # 3
+# Start create html file to have post list.
+# create folder(directery) inside blog folder and name it templates
+# inside templates create folder name it blog
+# inside blog create html file name it post_list
+# after creating html file need to create view (go to view.py) to show this page on our website
+# after creating view you need to create url
+# if url.py si not exist create folder inside blog and name it urls
+# after you finish from urls.py inside blog folder, go to urls.py inside mysite folder and do some adjusments
+		# check this video at min 15:00 to get an idea about filters
+# then go to view.py and add the way that shown list of the post
+# after finish from view go to post_list.html and add dynamic code that show the posts these inside the database
+

@@ -1,3 +1,5 @@
+# after finish 3 videos
+
 from django.shortcuts import render
 # import time zone from django.utils
 from django.utils import timezone
