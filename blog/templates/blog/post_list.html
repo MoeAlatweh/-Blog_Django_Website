@@ -12,7 +12,8 @@
 {% for post in posts %}
      <div>
          <p>Published: {{ post.published_date }}</p>
-         <h1><a href="">{{ post.title }}</a> </h1>
+         <!-- add link to take you to the certain post you click in  -->
+         <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> </h1>
          <!-- add |linebreaksbr to break lines in your text to make it nicer -->
          <p>{{ post.text|linebreaksbr }}</p>
      </div>

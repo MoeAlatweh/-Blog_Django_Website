@@ -95,4 +95,16 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 		# check this video at min 15:00 to get an idea about filters
 # then go to view.py and add the way that shown list of the post
 # after finish from view go to post_list.html and add dynamic code that show the posts these inside the database
+# add all chenges to your github account
+# create branch by using: git checkout -b step_3_create_post
+# add and commit bu typing: git commit -m "Show all blog posts on the home page."
+# then push to github account by using: git push origin step_3_create_post
 
+
+## biginning of video # 4
+# go to view.py and create function for post_detail
+# create html file inside blog file with name post_detail.html
+# go to blog\urls.py and add path for post_detail
+# go to post_list and add link for post title
+
+ 

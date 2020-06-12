@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- make the title same as title in post_list.html -->
+    <title>Moe Blog</title>
+</head>
+<body>
+<!-- if published_date is exist show it  -->
+{% if post.published_date %}
+   <div>
+       {{ post.published_date }}
+   </div>
+{% endif %}
+<h1>{{ post.title }}</h1>
+<p>{{ post.text|linebreaksbr }}</p>
+
+</body>
+</html>

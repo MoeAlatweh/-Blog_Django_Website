@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 # import time zone from django.utils
 from django.utils import timezone
 # import post from our models
@@ -18,3 +18,13 @@ def post_list(request):
     # create dictionary name stuff_for_frontend and contain keyword 'posts' that's have our posts list(the valuse) that created above
     stuff_for_frontend = {'posts': posts}
     return render(request, 'blog/post_list.html',stuff_for_frontend)
+
+
+# create view for post_detail.html file, use pk as primary key to indicate each post(each post has unique primary key)
+def post_detail(request, pk):
+    ## use 'get_object_or_404' to take you to the post if it is exist, if not send you to 404 page (need to import 'get_object_or_404' from django.shortcuts in the top)
+    post = get_object_or_404(Post, pk=pk)
+    # save value of variable above(post) in stuff_for_frontend to return it to the page
+    stuff_for_frontend = {'post': post}
+    # make sure to not forget -render-
+    return render(request, 'blog/post_detail.html', stuff_for_frontend)
