@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Moe Blog</title>
-</head>
-<body>
-<!-- name of website at top of the page and connect with home page link when you click it -->
-<h1><a href="/">Moe Blog</a></h1>
-
-<!-- add for loop to show posts title,published_date, and text-->
-{% for post in posts %}
-     <div>
-         <p>Published: {{ post.published_date }}</p>
-         <!-- add link to take you to the certain post you click in  -->
-         <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> </h1>
-         <!-- add |linebreaksbr to break lines in your text to make it nicer -->
-         <p>{{ post.text|linebreaksbr }}</p>
-     </div>
-{% endfor %}
-
-</body>
-</html>
+<!-- to extend the code that have all the styling from base.html-->
+{% extends 'blog/base.html' %}
+<!-- to put content of this page inside base.html -->
+{% block content %}
+    <!-- add for loop to show posts title,published_date, and text-->
+    {% for post in posts %}
+    <div class="post">
+        <div class="date">
+            <p>Published: {{ post.published_date }}</p>
+        </div>
+        <!-- add link to take you to the certain post you click in  -->
+        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> </h1>
+        <!-- add |linebreaksbr to break lines in your text to make it nicer -->
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}

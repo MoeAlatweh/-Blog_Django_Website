@@ -1,0 +1,49 @@
+.page-header {
+    /* background color for header is dark red */
+    background-color: #8B0000;
+    /* used to let page header start from the top of the page */
+    margin-top: 0;
+    /* used to organize the page header with these dimensions  */
+    padding: 20px 20px 20px 40px;
+}
+/* put 'h1' and 'h1 a' to specific lines inside page-header class with tag h1 and tag h1 and link */
+.page-header h1, .page-header h1 a{
+    /* white color for the header */
+    color: #ffffff;
+    /* size of our header */
+    font-size: 36pt;
+    /* to not have line under the header */
+    text-decoration: none
+}
+
+/* to push the post inside  content class to left  */
+.content {
+    margin-left: 40px;
+}
+
+/* adjust font type for any text taged with h1,h2,h3,and h4 */
+h1, h2, h3, h4 {
+    font-family: 'Tangerine' , 'Inconsolata' , 'Droid Sans' , serif;
+    font-size: 48px;
+}
+
+/* customize the date with gray color and font type   */
+.date, date p {
+    color: #808080;
+    font-family: 'Tangerine' , 'Inconsolata' , 'Droid Sans' , serif;
+}
+
+.post {
+    /* to make space between posts */
+    margin-bottom: 70px;
+}
+
+/* to give the post title black color */
+.post h1 a {
+    color: #000000;
+}
+
+/* to give the post that has been visited purple color */
+.post h1 a:visited {
+    color: purple;
+}

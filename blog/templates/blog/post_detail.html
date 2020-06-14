@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- make the title same as title in post_list.html -->
-    <title>Moe Blog</title>
-</head>
-<body>
-<!-- if published_date is exist show it  -->
-{% if post.published_date %}
-   <div>
-       {{ post.published_date }}
-   </div>
-{% endif %}
-<h1>{{ post.title }}</h1>
-<p>{{ post.text|linebreaksbr }}</p>
-
-</body>
-</html>
+<!-- to extend the code that have all the styling from base.html-->
+{% extends 'blog/base.html' %}
+<!-- to put content of this page inside base.html -->
+{% block content %}
+    <!-- add for loop to show posts title,published_date, and text-->
+    <!-- if published_date is exist show it  -->
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

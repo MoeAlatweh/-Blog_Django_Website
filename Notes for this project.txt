@@ -106,5 +106,31 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 # create html file inside blog file with name post_detail.html
 # go to blog\urls.py and add path for post_detail
 # go to post_list and add link for post title
+# add,commit and push to github
+
+
+# biginning of video # 5
+# go to post_list.html to add some style on it.
+# need to add fonts from google to our app, make search on google font, choose which font you need , click on Select this style,click on icon that's indicate view your selected family, and under Embed copy the link and past it in your code
+# for this app we will use: Inconsolata font, will copy the link and past it in head tag
+# copy link from bootstrapcdn
+# add classes to the code
+# go to post_detail.html and do the same
+# because the theme of our page will be the same for most pages(like page header, coler background...etc), we will create page that's have the main style thing and name it base.html(create html file inside template/blog folder)
+# copy page_list.html file and past it in base.html and adjust it to have content block
+# now you can delete everything in page post_list and post_detail with keep the special line we need 
+ 
+
+# biginning of video # 6
+# go to blog(above migrations and template folders),right cleck and create directory called static
+# inside static folder we will create another directory called css
+# inside css folder will create file and name it blog.css 
+# to add codes for css file , we can start do that in chrom page of our app by inspect the page and start add lines then we can copy and past in our code
+# make sure to link css file to base.html file
+# go to css file and start code
+# add, commit and push to github
+
+
+
 
  
