@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 # import time zone from django.utils
 from django.utils import timezone
 # import post from our models
 from .models import Post
-
+# import PostForm from forms.py
+from blog.forms import PostForm
 
 # create view for post_list html file
 def post_list(request):
@@ -28,3 +29,29 @@ def post_detail(request, pk):
     stuff_for_frontend = {'post': post}
     # make sure to not forget -render-
     return render(request, 'blog/post_detail.html', stuff_for_frontend)
+
+# create view for post_new to show the new pot has been create it
+def post_new(request):
+    # works when you submit a post
+    # checking when you create post by method POST pass the information you input to them on the form
+    if request.method == 'POST' :
+        form = PostForm(request.POST)
+        # to check if the user put valid text inside the fields , to make sure doesn't try to hack us or so
+        if form.is_valid():
+            # to create the post data inside the data base but not save it yet
+            post = form.save(commit=False)
+            # to set the author to who ever create the post
+            post.author = request.user
+            # to  set the publish date to time we create the post
+            post.published_date = timezone.now()
+            # to save the post date inside the data base
+            post.save()
+            # to take you to post detail page when you submit the post
+            # we add redirect to take you in other page, because if you refresh the page will let you create the post again, need to use redirect method in case you have page of checkout because you don't want to pay money every time you refresh the page
+            return redirect ('post_detail', pk=post.pk)
+    # work when you go to  page to create the post
+    else:
+        form = PostForm()
+        # save value of variable above(form) in stuff_for_frontend to return it to the page
+        stuff_for_frontend = {'form': form}
+    return render(request, 'blog/post_edit.html' , stuff_for_frontend)

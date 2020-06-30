@@ -131,6 +131,15 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 # add, commit and push to github
 
 
+# biginning of video # 7
+# first need to creat new python file inside blog file and name it forms, to built form that's let us create new post
+# inside templates/blog create html file and call it post_edit(the reason to name it like that, because no reason to create 2 html file one for create new post and one for edit post while both of them will have the same feilds and features, so we creat one html file for both features)
+# go to vews.py and create new view called Post_new
+# go to urls.py and map the new link that's appeare when we create new post
+# go to forms.py and add codes to use django to create post
+# go to view.py and define 'form' that use in post_edit.html, and add some codes
+# go to post_edit file and add classes to make it better
+# go to css file and create the 2 classes  that you add them in post_edit file 
 
 
  
