@@ -140,6 +140,15 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 # go to view.py and define 'form' that use in post_edit.html, and add some codes
 # go to post_edit file and add classes to make it better
 # go to css file and create the 2 classes  that you add them in post_edit file 
+# add, commit and push to github
+
+
+# biginning of video # 8
+# go to view.py and add function called post_edit
+# go to urls file and create link 
+# go to base.html and  add link for font awesome
+# go to post_detail page and link for icon from font awesome
+
 
 
  
