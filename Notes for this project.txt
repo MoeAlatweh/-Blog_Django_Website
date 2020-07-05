@@ -151,4 +151,12 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 
 
 
+# biginning of video # 9
+# go to base.html and add icon from font awesome to add new post
+# go to css file  and create class for top-menu
+# back to base.html and add class of top-menu,and add security line
+# go to page_detail and add security line
+
+
+
  

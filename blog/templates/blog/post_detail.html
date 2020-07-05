@@ -10,8 +10,13 @@
                 {{ post.published_date }}
             </div>
         {% endif %}
-    <!-- add edit icon from font awesome, and link it with post_edit page-->
-    <a href="{% url 'post_edit' pk=post.pk%}"><i class="fas fa-pencil-ruler fa-2x" style="color: #8B0000"></i></a>
+
+     <!-- add security to not show the add icon until user login -->
+    {% if user.is_authenticated %}
+        <!-- add edit icon from font awesome, and link it with post_edit page-->
+        <a href="{% url 'post_edit' pk=post.pk%}"><i class="fas fa-pencil-ruler fa-2x" style="color: #8B0000"></i></a>
+    {% endif %}
+
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>

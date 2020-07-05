@@ -19,6 +19,11 @@
 <body>
 <!-- add class from bootstrap  -->
 <div class="page-header">
+    <!-- add security to not show the add icon until user login -->
+    {% if user.is_authenticated %}
+        <!-- add icon to add post from font awesome , and link it with post_new page -->
+        <a href="{% url 'post_new' %}" class="top-menu"><i class="fas fa-plus fa-2x"></i></a>
+    {% endif %}
     <!-- name of website at top of the page and connect with home page link when you click it -->
     <h1><a href="/">Moe Blog</a></h1>
 </div>
