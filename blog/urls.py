@@ -20,5 +20,11 @@ urlpatterns = [
     # local: go to 127.0.0.1:8000/post/2/edit
     # online: mydjangosite.com/post/2/edit
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
+    # local: go to 127.0.0.1:8000/drafts
+    # online: mydjangosite.com/drafts
+    path('drafts/', views.post_draft_list, name='post_draft_list'),
+    # local: go to 127.0.0.1:8000/post/2/publish
+    # online: mydjangosite.com/post/2/publish
+    path('post/<int:pk>/publish/', views.post_publish, name='post_publish'),
 
 ]

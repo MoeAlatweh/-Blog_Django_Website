@@ -11,7 +11,8 @@
         <!-- add link to take you to the certain post you click in  -->
         <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> </h1>
         <!-- add |linebreaksbr to break lines in your text to make it nicer -->
-        <p>{{ post.text|linebreaksbr }}</p>
+        <!-- use '|truncatechars:' to show certine numbers of chars from post text -->
+        <p>{{ post.text|truncatechars:10|linebreaksbr }}</p>
     </div>
     {% endfor %}
 {% endblock %}

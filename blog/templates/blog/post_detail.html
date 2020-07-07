@@ -9,6 +9,9 @@
             <div class="date">
                 {{ post.published_date }}
             </div>
+        <!-- if not show bottom that let you publish the post -->
+        {% else %}
+            <a href="{% url 'post_publish' pk=post.pk %}" class="btn btn-primary">Publish</a>
         {% endif %}
 
      <!-- add security to not show the add icon until user login -->

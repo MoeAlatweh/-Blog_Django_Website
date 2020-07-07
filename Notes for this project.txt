@@ -159,4 +159,13 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 
 
 
- 
+# biginning of video # 10
+# go to base.html and add icon for deaft posts from font awesome
+# create html file inside blog/template/blog, and name it post_draft_list
+# go to view.py and create function thst called post_draft_list
+# go to urls file and create link
+# go to post_draft_list and create the page
+# go to view.py and function of post-publish
+# go to urls file and create link
+# go to page_detail and add pulish icon
+# go to view.py, go to post_edit and post_new functions, and commit out lines of publish date to make sure is not published until we click the publish botton  

@@ -23,6 +23,8 @@
     {% if user.is_authenticated %}
         <!-- add icon to add post from font awesome , and link it with post_new page -->
         <a href="{% url 'post_new' %}" class="top-menu"><i class="fas fa-plus fa-2x"></i></a>
+        <!-- add icon to access draft posts from font awesome , and link it with post_draft_list page -->
+        <a href="{% url 'post_draft_list' %}" class="top-menu"><i class="fab fa-firstdraft fa-2x"></i></a>
     {% endif %}
     <!-- name of website at top of the page and connect with home page link when you click it -->
     <h1><a href="/">Moe Blog</a></h1>

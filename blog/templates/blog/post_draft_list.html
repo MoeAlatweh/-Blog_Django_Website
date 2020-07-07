@@ -1,0 +1,20 @@
+<!-- to extend the code that have all the styling from base.html-->
+{% extends 'blog/base.html' %}
+<!-- to put content of this page inside base.html -->
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <p class="date">Created: {{ post.created_date}}</p>
+            <!-- if you want to format the date in US order  use '|date: 'm-d-y''  -->
+            <!--  <p class="date">Created: {{ post.created_date|date:'m-d-y'}}</p> -->
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <!-- use '|truncatechars:' to show certine numbers of chars from post text -->
+            <p>{{ post.text|truncatechars:10 }}</p>
+        </div>
+    {% endfor %}
+
+
+
+
+
+{% endblock %}

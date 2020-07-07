@@ -43,7 +43,7 @@ def post_new(request):
             # to set the author to who ever create the post
             post.author = request.user
             # to  set the publish date to time we create the post
-            post.published_date = timezone.now()
+            #post.published_date = timezone.now()
             # to save the post date inside the data base
             post.save()
             # to take you to post detail page when you submit the post
@@ -69,7 +69,7 @@ def post_edit(request, pk):
             # to set the author to who ever create the post
             post.author = request.user
             # to  set the publish date to time we create the post
-            post.published_date = timezone.now()
+            #post.published_date = timezone.now()
             # to save the post date inside the data base
             post.save()
             # to take you to post detail page when you submit the post
@@ -80,3 +80,16 @@ def post_edit(request, pk):
         stuff_for_frontend = {'form': form}
     return render(request, 'blog/post_edit.html', stuff_for_frontend)
 
+
+def post_draft_list(request):
+    # just to show post in draft by filter posts that don't have published date
+    posts = Post.objects.filter(published_date__isnull=True).order_by('-created_date')
+    stuff_for_frontend = {'posts': posts}
+    return render(request, 'blog/post_draft_list.html', stuff_for_frontend)
+
+
+def post_publish(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    # used publish method that we created in models.py
+    post.publish()
+    return redirect('post_detail', pk=pk)
