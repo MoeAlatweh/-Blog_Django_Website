@@ -1,5 +1,7 @@
 <!-- to extend the code that have all the styling from base.html-->
 {% extends 'blog/base.html' %}
+<!-- change the title related to post title -->
+{% block title %}{{ post.title }}{% endblock %}
 <!-- to put content of this page inside base.html -->
 {% block content %}
     <!-- add for loop to show posts title,published_date, and text-->

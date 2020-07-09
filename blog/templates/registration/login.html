@@ -1,0 +1,24 @@
+<!-- to extend the code that have all the styling from base.html-->
+{% extends 'blog/base.html' %}
+
+<!-- change the title to my drafts -->
+{% block title %}Login{% endblock %}
+
+<!-- to put content of this page inside base.html -->
+{% block content %}
+    <h2>Login</h2>
+
+    <form method="post">
+        <!-- for security -->
+        {% csrf_token %}
+        <!-- use it when need to access view that builtin inside django  -->
+        <!-- use .as_p to make each field in separate p tag -->
+        {{ form.as_p}}
+    <!-- add button to submit after enter your information-->
+    <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+
+
+
+
+{% endblock %}

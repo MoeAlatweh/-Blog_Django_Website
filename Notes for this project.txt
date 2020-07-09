@@ -169,3 +169,21 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 # go to urls file and create link
 # go to page_detail and add pulish icon
 # go to view.py, go to post_edit and post_new functions, and commit out lines of publish date to make sure is not published until we click the publish botton  
+
+
+
+# biginning of video # 11
+# create new branch by typing git checkout -b step_4_login
+# go to url.py and import function that built in inside django.
+# create link for login
+# we don't need to create function in view.py because we use built in function inside django
+# create folder called registration inside templates folder
+# inside registration folder create html file and name it login
+# go to login.html and add the code
+# because we have issue after login by using built in function, we need to go to setting.py and add line to redirect us to post_list page.
+# under ALLOWED_HOSTS = [] add this line LOGIN_REDIRECT_URL = 'post_list'
+# need to add code that's let you create or edit new post if you are only login, otherwise take you to login page.
+# to do that go to view.py and import function and add this line(@login_required) above functions of create new and edit post.
+# go to base.html and add icon to login
+# to make title in tab is dynamic and change depending on url..go to base.html and change title to <title>{% block title %}{% endblock %}</title> 
+# go to each html file and code to make title dynamic

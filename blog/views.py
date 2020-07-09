@@ -5,6 +5,8 @@ from django.utils import timezone
 from .models import Post
 # import PostForm from forms.py
 from blog.forms import PostForm
+# import login_required from django
+from django.contrib.auth.decorators import login_required
 
 # create view for post_list html file
 def post_list(request):
@@ -30,6 +32,8 @@ def post_detail(request, pk):
     # make sure to not forget -render-
     return render(request, 'blog/post_detail.html', stuff_for_frontend)
 
+# add this code that's let you create or edit new post if you are only login, otherwise take you to login page.
+@login_required
 # create view for post_new to show the new pot has been create it
 def post_new(request):
     # works when you submit a post
@@ -56,7 +60,8 @@ def post_new(request):
         stuff_for_frontend = {'form': form}
     return render(request, 'blog/post_edit.html' , stuff_for_frontend)
 
-
+# add this code that's let you create or edit new post if you are only login, otherwise take you to login page.
+@login_required
 def post_edit(request, pk):
     ## use 'get_object_or_404' to take you to the post if it is exist, if not send you to 404 page
     post = get_object_or_404(Post, pk=pk)
@@ -77,17 +82,19 @@ def post_edit(request, pk):
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
-        stuff_for_frontend = {'form': form}
+        stuff_for_frontend = {'form': form, 'post': post}
     return render(request, 'blog/post_edit.html', stuff_for_frontend)
 
-
+# add this code that's let you create or edit new post if you are only login, otherwise take you to login page.
+@login_required
 def post_draft_list(request):
     # just to show post in draft by filter posts that don't have published date
     posts = Post.objects.filter(published_date__isnull=True).order_by('-created_date')
     stuff_for_frontend = {'posts': posts}
     return render(request, 'blog/post_draft_list.html', stuff_for_frontend)
 
-
+# add this code that's let you create or edit new post if you are only login, otherwise take you to login page.
+@login_required
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     # used publish method that we created in models.py

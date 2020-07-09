@@ -2,6 +2,8 @@
 from django.urls import path
 # import view
 from . import views
+# import login functionality from django
+from django.contrib.auth import views as auth_views
 
 # add links for pages of our app
 
@@ -26,5 +28,8 @@ urlpatterns = [
     # local: go to 127.0.0.1:8000/post/2/publish
     # online: mydjangosite.com/post/2/publish
     path('post/<int:pk>/publish/', views.post_publish, name='post_publish'),
+    # local: go to 127.0.0.1:8000/accounts/login
+    # online: mydjangosite.com/accounts/login
+    path('accounts/login/', auth_views.LoginView.as_view(template_name="registration/login.html"), name='login'),
 
 ]
