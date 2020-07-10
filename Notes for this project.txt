@@ -198,3 +198,4 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 # under ALLOWED_HOSTS = [] add this line LOGOUT_REDIRECT_URL = 'post_list'
 # go to base.html and add name of user in top of page when he login, beside logout link.
 # add, commit and push to github
+# because step_3 and step_4 are ready we can push them to master by git checkout master
