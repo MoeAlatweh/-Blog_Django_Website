@@ -187,3 +187,14 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 # go to base.html and add icon to login
 # to make title in tab is dynamic and change depending on url..go to base.html and change title to <title>{% block title %}{% endblock %}</title> 
 # go to each html file and code to make title dynamic
+# add, commit and push to github
+
+
+
+# biginning of video # 12
+# need to move logoin and logout paths to the main url(mysite\urls.py) file because maybe you have different applications inside your website.
+# go to mysite\urls.py and add path for login and logout
+# because we have issue after logout by using built in function, we need to go to setting.py and add line to redirect us to post_list page.
+# under ALLOWED_HOSTS = [] add this line LOGOUT_REDIRECT_URL = 'post_list'
+# go to base.html and add name of user in top of page when he login, beside logout link.
+# add, commit and push to github

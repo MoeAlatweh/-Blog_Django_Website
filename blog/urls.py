@@ -28,8 +28,10 @@ urlpatterns = [
     # local: go to 127.0.0.1:8000/post/2/publish
     # online: mydjangosite.com/post/2/publish
     path('post/<int:pk>/publish/', views.post_publish, name='post_publish'),
+
+    ### take it to mysite\urls.py , because login and logout should be universal
     # local: go to 127.0.0.1:8000/accounts/login
     # online: mydjangosite.com/accounts/login
-    path('accounts/login/', auth_views.LoginView.as_view(template_name="registration/login.html"), name='login'),
+    #path('accounts/login/', auth_views.LoginView.as_view(template_name="registration/login.html"), name='login'),
 
 ]

@@ -16,9 +16,20 @@ Including another URLconf
 from django.contrib import admin
 # add include to include our urls.py (that' inside blog folder) to main urls file
 from django.urls import path, include
+# import auth_views from django
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # local: go to 127.0.0.1:8000/accounts/login
+    # online: mydjangosite.com/accounts/login
+    path('accounts/login/', auth_views.LoginView.as_view(template_name="registration/login.html"), name='login'),
+
+    # local: go to 127.0.0.1:8000/accounts/logout
+    # online: mydjangosite.com/accounts/logout
+    path('accounts/logout/', view=auth_views.LogoutView.as_view(), name='logout'),
+
     # add urls file (that' inside blog folder)
-    path('', include('blog.urls'))
+    path('', include('blog.urls')),
 ]

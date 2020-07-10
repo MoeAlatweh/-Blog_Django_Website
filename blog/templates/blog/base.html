@@ -26,6 +26,8 @@
         <a href="{% url 'post_new' %}" class="top-menu"><i class="fas fa-plus fa-2x"></i></a>
         <!-- add icon to access draft posts from font awesome , and link it with post_draft_list page -->
         <a href="{% url 'post_draft_list' %}" class="top-menu"><i class="fab fa-firstdraft fa-2x"></i></a>
+        <!-- to show username in top of page,beside logout link, we use small tag to make it small as much we can-->
+        <p class="top-menu">Hello, {{ user.username }} <small>(<a href="{% url 'logout' %}">Logout</a>)</small></p>
     <!-- if user not login show him icon of login -->
     {% else %}
         <a href="{% url 'login' %}" class="top-menu"><i class="fas fa-sign-in-alt fa-2x"></i></a>

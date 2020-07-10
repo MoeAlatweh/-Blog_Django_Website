@@ -30,6 +30,9 @@ ALLOWED_HOSTS = []
 # because we have issue after login by using built in function, we need to add line to redirect us to post_list page.
 LOGIN_REDIRECT_URL = 'post_list'
 
+# because we have issue after logout by using built in function, we need to add line to redirect us to post_list page.
+LOGOUT_REDIRECT_URL = 'post_list'
+
 # Application definition
 
 INSTALLED_APPS = [
