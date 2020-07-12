@@ -199,3 +199,24 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 # go to base.html and add name of user in top of page when he login, beside logout link.
 # add, commit and push to github
 # because step_3 and step_4 are ready we can push them to master by git checkout master
+# then git merge step_4_login
+# then git push origin master
+
+
+# biginning of video # 13
+# create new branch by type>> git checkout -b step_5_add_comments
+# go to models.py and add comment model
+# go to forms.py and create class CommentsForm
+# go to view.py and create comments function
+# go to post_details, to add code that shows comments.
+# any time you create new module(or class) you need to add it to the database...
+# first type: python manage.py migrate
+# then: python manage.py makemigrations
+# last: python manage.py migrate
+# go to admin.py and rigister Comment module
+# inside templates/blog, create file and name it..add_comment_to_post
+# create page that shows the comment
+# go to css file and add some styling for comment
+# go to url.py and create path
+# go to post_detail, and add button to create a comment
+	

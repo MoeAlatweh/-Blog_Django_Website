@@ -34,4 +34,8 @@ urlpatterns = [
     # online: mydjangosite.com/accounts/login
     #path('accounts/login/', auth_views.LoginView.as_view(template_name="registration/login.html"), name='login'),
 
+    # local: go to 127.0.0.1:8000/post/2/comment
+    # online: mydjangosite.com/post/2/comment
+    path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
+
 ]

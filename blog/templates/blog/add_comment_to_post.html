@@ -1,0 +1,15 @@
+<!-- to extend the code that have all the styling from base.html-->
+{% extends 'blog/base.html' %}
+<!-- title on browser tap -->
+{% block title %}Adding a Comment{% endblock %}
+<!-- to put content of this page inside base.html -->
+{% block content %}
+    <h1>New comment</h1>
+    <form class="post-form-blog" method="post">
+        <!-- for security  -->
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+
+{% endblock %}

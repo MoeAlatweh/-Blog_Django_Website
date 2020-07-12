@@ -3,8 +3,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 # import post from our models
 from .models import Post
-# import PostForm from forms.py
-from blog.forms import PostForm
+# import PostForm, and CommentForm from forms.py
+from blog.forms import PostForm, CommentForm
 # import login_required from django
 from django.contrib.auth.decorators import login_required
 
@@ -100,3 +100,28 @@ def post_publish(request, pk):
     # used publish method that we created in models.py
     post.publish()
     return redirect('post_detail', pk=pk)
+
+
+def add_comment_to_post(request, pk):
+    ## use 'get_object_or_404' to take you to the post if it is exist, if not send you to 404 page
+    post = get_object_or_404(Post, pk=pk)
+    ## method of POST means we want to add or edit something, but method of GET means just we see the thing as it is
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        # to check if the user put valid text inside the fields , to make sure doesn't try to hack us or so
+        if form.is_valid():
+            # to create the comment data inside the data base but not save it yet
+            comment = form.save(commit= False)
+            # to set the author to who ever create the comment
+            comment.author = request.user
+            # to save the comment date inside the data base
+            comment.post = post
+            comment.save()
+            return redirect('post_detail', pk=post.pk)
+        # else means if method is GET
+    else:
+        form = CommentForm()
+        stuff_for_frontend = {'form': form}
+    return render(request, 'blog/add_comment_to_post.html', stuff_for_frontend)
+
+

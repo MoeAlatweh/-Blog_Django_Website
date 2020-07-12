@@ -27,8 +27,16 @@ class Post(models.Model):
     # you can return any thing you like to see like author or created-time... , it will be the same just replace title
     def __str__(self):
         return self.title
-    # to show the title and the author:
-      # return str(self.title) + 'by' + str(self.author)
+    # to show the title and the author if you want:
+    # return str(self.title) + 'by' + str(self.author)
 
+# add Comments model that's relate to the posts, we use -on_delete=models.CASCADE- to delete all comments that relate in the post that deleted, we use -related_name='comments'- to can use this name when we need to show the comments later
+class Comment(models.Model):
+    post = models.ForeignKey('blog.Post', on_delete=models.CASCADE, related_name='comments')
+    author = models.CharField(max_length=200)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
 
-
+    # create string represintaion to show you text of comment not just (post object1...)
+    def __str__(self):
+        return self.text

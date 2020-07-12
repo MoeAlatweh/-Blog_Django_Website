@@ -25,4 +25,23 @@
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
+
+    <!-- use hr tag just to show small thin line above comments section -->
+    <hr>
+    <!-- add button that let yoy add a comment -->
+    <a href="{% url 'add_comment_to_post' pk=post.pk %}" class="btn btn-secondary">Add comment</a>
+    {% for comment in post.comments.all %}
+        <div class="comment">
+            <div class="date">
+                {{ comment.created_date }}
+            </div>
+            <!-- use strong tag to make it bold and clear -->
+            <strong>{{ comment.author }}</strong>
+            <p>{{ comment.text }}</p>
+        </div>
+        <!-- if no comments under post shows 'No comments yet...' -->
+        {% empty %}
+            <p>No comments yet...</p>
+    {% endfor %}
+
 {% endblock %}
