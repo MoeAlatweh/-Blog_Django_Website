@@ -35,8 +35,11 @@
             <div class="date">
                 {{ comment.created_date }}
             </div>
+            <!-- add icon from font awesome to delete comments  -->
+            <a href="{% url 'comment_remove' pk=comment.pk %}"><i class="far fa-times-circle"  style="color: #8B0000"></i></a>
+
             <!-- use strong tag to make it bold and clear -->
-            <strong>{{ comment.author }}</strong>
+            <p><strong>{{ comment.author }}</strong></p>
             <p>{{ comment.text }}</p>
         </div>
         <!-- if no comments under post shows 'No comments yet...' -->

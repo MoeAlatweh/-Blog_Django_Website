@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 # import time zone from django.utils
 from django.utils import timezone
-# import post from our models
-from .models import Post
+# import post,and comment from our models
+from .models import Post, Comment
 # import PostForm, and CommentForm from forms.py
 from blog.forms import PostForm, CommentForm
 # import login_required from django
@@ -124,4 +124,8 @@ def add_comment_to_post(request, pk):
         stuff_for_frontend = {'form': form}
     return render(request, 'blog/add_comment_to_post.html', stuff_for_frontend)
 
-
+# to delete comments
+def comment_remove(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.delete()
+    return redirect('post_detail', pk=comment.post.pk)

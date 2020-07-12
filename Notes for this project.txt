@@ -219,4 +219,11 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 # go to css file and add some styling for comment
 # go to url.py and create path
 # go to post_detail, and add button to create a comment
-	
+# add, commit and push to github	
+
+
+
+# biginning of video # 14
+# go to view.py and create function of comment_remove
+# go to url.py and create path
+# go to post detail and add button to delete comments 
