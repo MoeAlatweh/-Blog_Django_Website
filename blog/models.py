@@ -21,6 +21,9 @@ class Post(models.Model):
         self.published_date = timezone.now()
         self.save()
 
+    # create method and call it approved_comments, and use it in page_list to show the approved comments
+    def approved_comments(self):
+        return self.comments.filter(approved=True)
 
 
     # create string represintaion to show you title of post not just (post object1...)
@@ -36,6 +39,14 @@ class Comment(models.Model):
     author = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
+
+    # to add feature of approve comments or reject
+    approved = models.BooleanField(default=False)
+
+    # create function to let approve comments
+    def approve(self):
+        self.approved = True
+        self.save()
 
     # create string represintaion to show you text of comment not just (post object1...)
     def __str__(self):

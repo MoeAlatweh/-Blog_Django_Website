@@ -17,6 +17,10 @@
         <!-- add |linebreaksbr to break lines in your text to make it nicer -->
         <!-- use '|truncatechars:' to show certine numbers of chars from post text -->
         <p>{{ post.text|truncatechars:10|linebreaksbr }}</p>
+
+        <!-- add link under each post to access comments, '{{ post.approved_comments.count }}' use method we created in models.py to show numbers of approved comments  -->
+        <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+
     </div>
     {% endfor %}
 {% endblock %}

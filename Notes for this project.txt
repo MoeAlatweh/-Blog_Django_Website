@@ -227,3 +227,17 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 # go to view.py and create function of comment_remove
 # go to url.py and create path
 # go to post detail and add button to delete comments 
+# add, commit and push to github
+
+
+
+# biginning of video # 15
+# go to module.py and add some staff to Comment class
+# any time you modify module(or class) you need to add it to the database...
+# first type: python manage.py migrate
+# then: python manage.py makemigrations
+# last: python manage.py migrate
+# go to view.py and add function comment_approve
+# go to url.py and create path
+# go to post_detail to add the logic of approve or remove comments and add button to approve the comments 
+# go to post_list and add comment functionality 
