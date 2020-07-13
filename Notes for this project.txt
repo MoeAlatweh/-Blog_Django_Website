@@ -239,5 +239,11 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 # last: python manage.py migrate
 # go to view.py and add function comment_approve
 # go to url.py and create path
-# go to post_detail to add the logic of approve or remove comments and add button to approve the comments 
+# go to post_detail to add the logic of approve or remove comments and add button to approve the comments
+# we need to add comments count under each post,in the same time we need just to show the approved comments if user is not the superuser to do that:
+# go to models.py and add function of approved_comments
 # go to post_list and add comment functionality 
+# add, commit and push to github
+
+
+

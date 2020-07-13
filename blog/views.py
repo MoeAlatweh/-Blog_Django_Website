@@ -101,7 +101,8 @@ def post_publish(request, pk):
     post.publish()
     return redirect('post_detail', pk=pk)
 
-
+# add this code that's let you add a comment if you are only login, otherwise take you to login page.
+@login_required
 def add_comment_to_post(request, pk):
     ## use 'get_object_or_404' to take you to the post if it is exist, if not send you to 404 page
     post = get_object_or_404(Post, pk=pk)
@@ -124,12 +125,18 @@ def add_comment_to_post(request, pk):
         stuff_for_frontend = {'form': form}
     return render(request, 'blog/add_comment_to_post.html', stuff_for_frontend)
 
+
+# add this code to prevent any user(not the superuser) or visitor to delete a comment   .
+@login_required
 # to delete comments
 def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
 
+
+# add this code to prevent any user(not the superuser) or visitor to approve a comment   .
+@login_required
 # to approve comments
 def comment_approve(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
