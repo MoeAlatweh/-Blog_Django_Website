@@ -16,10 +16,16 @@
             <a href="{% url 'post_publish' pk=post.pk %}" class="btn btn-primary">Publish</a>
         {% endif %}
 
-     <!-- add security to not show the add icon until user login -->
+     <!-- add security to not show the edit icon until user login -->
     {% if user.is_authenticated %}
         <!-- add edit icon from font awesome, and link it with post_edit page-->
         <a href="{% url 'post_edit' pk=post.pk%}"><i class="fas fa-pencil-ruler fa-2x" style="color: #8B0000"></i></a>
+        <!-- add delete icon from font awesome, and link it with post_edit page-->
+        <!-- use java-script 'onclick' to confirm if you want really to delete the post   -->
+        <a href="{% url 'post_delete' pk=post.pk %}" class="btn btn danger"
+           onclick="return confirm('Are you sure you want to delete this post?')">
+            <i class="fas fa-trash-alt fa-2x" style="color: #8B0000"></i>
+        </a>
     {% endif %}
 
         <h1>{{ post.title }}</h1>

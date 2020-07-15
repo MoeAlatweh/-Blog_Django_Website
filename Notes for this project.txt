@@ -257,3 +257,15 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 # git checkout master
 # then git merge step_5_add_comments
 # then git push origin master
+# rest of video is about markdown_syntax highlight(do it later)
+
+
+
+# biginning of video # 18
+# create branch by git checkout -b step_7_delete_posts
+# go to view.py and create function of post_delete
+# go to url.py and create path
+# go to page_detail and add icon to delete a post
+# git checkout master
+# then git merge step_7_delete_posts
+# then git push origin master

@@ -101,6 +101,13 @@ def post_publish(request, pk):
     post.publish()
     return redirect('post_detail', pk=pk)
 
+# add this code that's let you delete posts if you are only login, otherwise take you to login page.
+@login_required
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    return redirect('post_list')
+
 # add this code that's let you add a comment if you are only login, otherwise take you to login page.
 @login_required
 def add_comment_to_post(request, pk):
