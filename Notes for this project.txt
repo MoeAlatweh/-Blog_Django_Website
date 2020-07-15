@@ -247,3 +247,13 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 
 
 
+# biginning of video # 16
+# go to view.py and add @login required line above add,approve,and remove comments functions to make app more secure.
+# add, commit and push to github
+
+
+# biginning of video # 17
+# need to merge everything we done to master branch
+# git checkout master
+# then git merge step_5_add_comments
+# then git push origin master
