@@ -25,6 +25,9 @@ SECRET_KEY = 'f&qs9x@+7s6segw#0&0(-2erhnj3%wp4i_ag&ep!gq&-hwbl=('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+## add it to use crispy_form to built sign up function
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
 ALLOWED_HOSTS = []
 
 # because we have issue after login by using built in function, we need to add line to redirect us to post_list page.
@@ -43,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

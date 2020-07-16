@@ -3,10 +3,14 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 # import post,and comment from our models
 from .models import Post, Comment
-# import PostForm, and CommentForm from forms.py
-from blog.forms import PostForm, CommentForm
+# import PostForm,CommentForm ,and UserForm from forms.py
+from blog.forms import PostForm, CommentForm, UserForm
 # import login_required from django
 from django.contrib.auth.decorators import login_required
+# import User from django
+from  django.contrib.auth.models import User
+# import login from django
+from django.contrib.auth import login
 
 # create view for post_list html file
 def post_list(request):
@@ -149,3 +153,15 @@ def comment_approve(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.approve()
     return redirect('post_detail', pk=comment.post.pk)
+
+# to sign up for new user
+def signup(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            new_user = User.objects.create_user(**form.cleaned_data)
+            login(request, new_user)
+            return redirect('/')
+    else:
+        form = UserForm()
+    return render(request, 'blog/signup.html', {'form': form})

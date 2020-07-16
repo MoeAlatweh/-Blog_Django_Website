@@ -269,3 +269,22 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 # git checkout master
 # then git merge step_7_delete_posts
 # then git push origin master
+
+
+# biginning of video # 19
+# we will use crispy_forms from django to create sign up ability
+# create branch>>> git checkout -b step_8_signup_crispy_forms
+# need to install crispt_form by>>> pip install django-crispy-forms
+# to add all stuff had been installed to requirements type>>> pip freeze > requirements.txt
+# go to form.py and from original file in github copy and past lines of code to import crispy-forms
+# go to view.py and add function of signup	
+# inside blog folder create html file with name signup
+# go to sitting.py and under DEPUG = True, add line of CRISPY_TEMPLATE_PACK = 'bootstrap3'
+# under INSTALLED_APPS ,add 'crispy_forms'
+# go to signup page and create it
+# go to url.py and create path  
+# go to login page and add option to create account(sign up)
+# add, commit and push to github
+# git checkout master
+# then git merge step_8_signup_crispy_forms
+# then git push origin master
