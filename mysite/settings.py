@@ -23,12 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f&qs9x@+7s6segw#0&0(-2erhnj3%wp4i_ag&ep!gq&-hwbl=('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ## add it to use crispy_form to built sign up function
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-ALLOWED_HOSTS = []
+## put url domain for webapp, and url for local
+ALLOWED_HOSTS = ['moe-blog-django-website.herokuapp.com', '127.0.0.1:8000']
 
 # because we have issue after login by using built in function, we need to add line to redirect us to post_list page.
 LOGIN_REDIRECT_URL = 'post_list'
@@ -57,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #add this line to deploy on horoku
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -128,3 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+##add lines below to deploy app on horuko
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'blog/static')]

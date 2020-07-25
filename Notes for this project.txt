@@ -288,3 +288,9 @@ C:\Users\Alatweh\PycharmProjects\untitled\venv\Scripts\python.exe
 # git checkout master
 # then git merge step_8_signup_crispy_forms
 # then git push origin master
+
+
+# deploy the app by horuko
+watch videos below:
+https://www.youtube.com/watch?v=6WuO9Sx_F_o&feature=youtu.be
+https://www.youtube.com/watch?v=kBwhtEIXGII
